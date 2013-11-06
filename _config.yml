@@ -18,6 +18,9 @@ links:
   - name:         GitHub
     url:          http://github.com/chamerling
     external:     true
+  - name:         Slides
+    url:          http://chamerling.github.io/slides/content
+    external:     true
 pygments:         true
 permalink:        pretty
 markdown:         rdiscount
