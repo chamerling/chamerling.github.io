@@ -11,32 +11,20 @@ layout: index
 <script>
 
 	var cha = new Gh3.User("chamerling")
-	,	repoTitle = $("h1")
-	,	branchTitle = $("h2")
-	,	branchContents = $("ul")
-	,	rawContent = $("textarea");
+	,	branchContents = $("ul");
 
 	var chaBlog = new Gh3.Repository("articles", cha);
-  
-  console.log(chaBlog)
-
 	chaBlog.fetch(function (err, res) {
 		if(err) { throw "outch ..." }
-
-		repoTitle.html(chaBlog.full_name);
-
 		chaBlog.fetchBranches(function (err, res) {
 			if(err) { throw "outch ..." }
 			var master = chaBlog.getBranchByName("master");
-			master.fetchContents({ direction , function (err, res) {
+			master.fetchContents(function (err, res) {
 				if(err) { throw "outch ..." }
 				master.eachContent(function (content) {
-          // TODO : Order by name
 					branchContents.append('<li><a href=\"' + content.html_url + '\">'+content.name+'</a>');
 				});
 			});
 		})
 	});
-
-		
 </script>
