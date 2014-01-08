@@ -3,10 +3,40 @@ layout: index
 ---
 
 <ul class="posts">
-  {% for post in site.posts %}
-  <li>
-    <small class="datetime muted" data-time="{{ post.date }}">{{ post.date | date_to_string }} </small>
-    <a href="{{ post.url }}">{{ post.title }}</a>
-  </li>
-  {% endfor %}
 </ul>
+
+<script src="/javascripts/jquery.js"></script>
+<script src="/javascripts/underscore.js"></script>
+<script src="/javascripts/gh3.js"></script>
+<script>
+
+	var cha = new Gh3.User("chamerling")
+	,	repoTitle = $("h1")
+	,	branchTitle = $("h2")
+	,	branchContents = $("ul")
+	,	rawContent = $("textarea");
+
+	var chaBlog = new Gh3.Repository("articles", cha);
+  
+  console.log(chaBlog)
+
+	chaBlog.fetch(function (err, res) {
+		if(err) { throw "outch ..." }
+
+		repoTitle.html(chaBlog.full_name);
+
+		chaBlog.fetchBranches(function (err, res) {
+			if(err) { throw "outch ..." }
+			var master = chaBlog.getBranchByName("master");
+			master.fetchContents({ direction , function (err, res) {
+				if(err) { throw "outch ..." }
+				master.eachContent(function (content) {
+          // TODO : Order by name
+					branchContents.append('<li><a href=\"' + content.html_url + '\">'+content.name+'</a>');
+				});
+			});
+		})
+	});
+
+		
+</script>
