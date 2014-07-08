@@ -1,4 +1,9 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
 gem 'jekyll'
-gem 'rdiscount'
+gem 'kramdown'
+gem 'coderay'
+gem 'rake'
+gem 'thor'
+gem 'activesupport'
+gem 'stringex'

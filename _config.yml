@@ -1,27 +1,56 @@
 title:            Christophe Hamerling
 description:      Christophe Hamerling Lines of Code.
 url:              # Site url.
-signoff:          # Your name.
-disqus_shortname: # disqus comment thread for post header options. ( leave blank if unwanted. )
-facebook_appid:   # appid for like button, remove from /_includes/share.html if unwanted.
-google_analytics: # set tracking, remove from /javascripts/basic.js if unwanted.
+
+# Owner/author information
+owner:
+  name:           C. Hamerling
+  avatar:         chamerling.png
+  bio:            "Software Hacker, Creating the @AwesomePaaS Enterprise Social Network and playing with drones @linagora"
+  email:          chamerling@linagora.com
+  # Social networking links are used in author-bio sidebar. Update and remove as you like.
+  twitter: chamerling
+  facebook:
+  github: chamerling
+  stackoverflow:
+  linkedin: chamerling
+  instagram: chamerling
+  lastfm:
+  tumblr:
+  pinterest:
+  foursquare:
+  steam:
+  dribbble:
+  # For Google Authorship https://plus.google.com/authorship
+  google_plus:
+
 
 links:
-  - name:         About
+  - title:        About
     url:          /about
-  - name:         Articles
-    url:          /articles
-  - name:         Email
-    url:          mailto:christophe.hamerling@gmail.com
+  - title:        Posts
+    url:          http://github.com/chamerling/articles
     external:     true
-  - name:         GitHub
-    url:          http://github.com/chamerling
+  - title:        Contact
+    url:          mailto:chamerling@linagora.com
     external:     true
-  - name:         Slides
+  - title:        Slides
     url:          http://chamerling.github.io/slides/content
     external:     true
-pygments:         true
+    
+highlighter:      true
 permalink:        pretty
-markdown:         rdiscount
-rdiscount:
-  extensions:     [smart]
+markdown:         kramdown
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  use_coderay: false
+
+  coderay:
+    coderay_line_numbers:
+    coderay_line_numbers_start: 1
+    coderay_tab_width: 4
+    coderay_bold_every: 10
+    coderay_css: class
